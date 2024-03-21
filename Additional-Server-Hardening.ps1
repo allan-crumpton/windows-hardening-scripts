@@ -1,4 +1,10 @@
 #########################################################
+# Server hardning additions taken from
+# Script by Evan Greene from https://github.com/eneerge/CIS-Windows-Server-2022
+#########################################################
+
+
+#########################################################
 # Increase User Hardening
 # Add additional users that should not have a specific right to increase the hardening of this script.
 #########################################################
