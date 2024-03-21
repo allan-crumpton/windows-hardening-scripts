@@ -19,6 +19,11 @@
 ::                        https://gist.github.com/ricardojba/ecdfe30dadbdab6c514a530bc5d51ef6
 ::
 ::###############################################################################################################
+:: Updates by allan-crumpton
+::
+:: Do not display last username at logon
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DontDisplayLastUserName /t REG_DWORD /d 1 /f
+
 :: Change file associations to protect against common ransomware attacks
 :: Note that if you legitimately use these extensions, like .bat, you will now need to execute them manually from cmd or powershell
 :: Alternatively, you can right-click on them and hit 'Run as Administrator' but ensure it's a script you want to run :) 
