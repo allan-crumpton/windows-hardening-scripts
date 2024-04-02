@@ -2,7 +2,7 @@
 
 <img src="https://github.com/atlantsecurity/windows-hardening-scripts/blob/main/windows-hardening-scripts.png?raw=true" />
 
-<p>FORKED FROM <a href=https://github.com/atlantsecurity/windows-hardening-scripts> due to some slight tweaks we have made to the script to serve our purposes better.
+<p>FORKED FROM <a href=https://github.com/atlantsecurity/windows-hardening-scripts>https://github.com/atlantsecurity/windows-hardening-scripts</a> due to some slight tweaks we have made to the script to serve our purposes better.
 
 <p>Quick overview of changes 
 <br>:: Do not display last username at logon
