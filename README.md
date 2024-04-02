@@ -1,4 +1,4 @@
-# A collection of Windows Server 2019 and Windows 10 hardening scripts
+# A collection of Windows Server and client hardening scripts
 
 <img src="https://github.com/atlantsecurity/windows-hardening-scripts/blob/main/windows-hardening-scripts.png?raw=true" />
 
