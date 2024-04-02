@@ -1,6 +1,6 @@
 # A collection of Windows Server and client hardening scripts
 
-<img src="https://github.com/atlantsecurity/windows-hardening-scripts/blob/main/windows-hardening-scripts.png?raw=true" />
+<img src="https://github.com/allan-crumpton/windows-hardening-scripts/blob/main/windows-hardening-scripts.png?raw=true" />
 
 <p>FORKED FROM <a href=https://github.com/atlantsecurity/windows-hardening-scripts>https://github.com/atlantsecurity/windows-hardening-scripts</a> due to some slight tweaks we have made to the script to serve our purposes better.
 
