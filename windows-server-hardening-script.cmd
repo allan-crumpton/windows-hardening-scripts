@@ -21,9 +21,17 @@
 ::###############################################################################################################
 :: Updates by allan-crumpton
 ::
+::###############################################################################################################
+:: Credits and More info: https://www.blackhillsinfosec.com/how-to-disable-llmnr-why-you-want-to/
 :: Do not display last username at logon
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DontDisplayLastUserName /t REG_DWORD /d 1 /f
+::Set EnableMulticast to disabled to prevent impersonation and hash harvesting, this replaces the key used in the main script now commented out which leaves this turned on
+reg add  “HKLM\Software\policies\Microsoft\Windows NT\DNSClient”
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v EnableMulticast /t REG_DWORD /d 0 /f
+:: allan-crumpton updates end
 
+
+::###############################################################################################################
 :: Change file associations to protect against common ransomware attacks
 :: Note that if you legitimately use these extensions, like .bat, you will now need to execute them manually from cmd or powershell
 :: Alternatively, you can right-click on them and hit 'Run as Administrator' but ensure it's a script you want to run :) 
@@ -236,7 +244,7 @@ del ProcessMitigation.xml
 reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 0
 :: Prevent Kerberos from using DES or RC4
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters" /v SupportedEncryptionTypes /t REG_DWORD /d 2147483640 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v EnableMulticast /t REG_DWORD /d 1 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v EnableMulticast /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v DisableSmartNameResolution /t REG_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v DisableParallelAandAAAA /t REG_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v IGMPLevel /t REG_DWORD /d 0 /f
