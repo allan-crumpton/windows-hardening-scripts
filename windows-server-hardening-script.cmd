@@ -26,7 +26,7 @@
 :: Do not display last username at logon
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DontDisplayLastUserName /t REG_DWORD /d 1 /f
 ::Set EnableMulticast to disabled to prevent impersonation and hash harvesting, this replaces the key used in the main script now commented out which leaves this turned on
-reg add  “HKLM\Software\policies\Microsoft\Windows NT\DNSClient”
+reg add "HKLM\Software\policies\Microsoft\Windows NT\DNSClient"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v EnableMulticast /t REG_DWORD /d 0 /f
 :: allan-crumpton updates end
 
