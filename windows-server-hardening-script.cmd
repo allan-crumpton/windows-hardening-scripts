@@ -22,14 +22,16 @@
 :: Updates by allan-crumpton
 ::
 ::###############################################################################################################
-:: Credits and More info: https://www.blackhillsinfosec.com/how-to-disable-llmnr-why-you-want-to/
 :: Do not display last username at logon
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DontDisplayLastUserName /t REG_DWORD /d 1 /f
-:: Set EnableMulticast to disabled to prevent impersonation and hash harvesting, this replaces the key used in the main script now commented out which leaves this turned on
+:: Set EnableMulticast to disabled to prevent impersonation and hash harvesting, this replaces the key used in the main script now commented out which leaves this turned on - https://www.blackhillsinfosec.com/how-to-disable-llmnr-why-you-want-to/
 reg add "HKLM\Software\policies\Microsoft\Windows NT\DNSClient"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient" /v EnableMulticast /t REG_DWORD /d 0 /f
 :: Configure all adaptors regardless of them being the current active adaptor to disable NetBIOS
 powershell.exe Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces\tcpip* -Name NetbiosOptions -Value 2
+:: WinVerifyTrust Signature Validation Vulnerability reg - https://learn.microsoft.com/en-us/answers/questions/1182542/cve-2013-3900-winverifytrust-signature-validation
+reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\Cryptography\Wintrust\Config " /v EnableCertPaddingCheck /t REG_SZ /d 1 /f
+reg add "HKLM\SOFTWARE\Microsoft\Cryptography\Wintrust\Config " /v EnableCertPaddingCheck /t REG_SZ /d 1 /f
 :: allan-crumpton updates end
 
 
