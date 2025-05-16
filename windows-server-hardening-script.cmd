@@ -32,6 +32,7 @@ powershell.exe Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\services\NetBT\Pa
 :: WinVerifyTrust Signature Validation Vulnerability reg - https://learn.microsoft.com/en-us/answers/questions/1182542/cve-2013-3900-winverifytrust-signature-validation
 reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\Cryptography\Wintrust\Config " /v EnableCertPaddingCheck /t REG_SZ /d 1 /f
 reg add "HKLM\SOFTWARE\Microsoft\Cryptography\Wintrust\Config " /v EnableCertPaddingCheck /t REG_SZ /d 1 /f
+:: Update Line 404 (DisableRemoteScmEndpoint to  0 if you want to enable a windows-cluster to prevent RDP connection errors
 :: allan-crumpton updates end
 
 
